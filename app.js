@@ -16,8 +16,9 @@ const commentRoutes=require('./routes/comments'),
 	  campgroundRoutes=require('./routes/campgrounds'),
 	  indexRoutes=require('./routes/index');
 
-mongoose.connect('mongodb://localhost/yelp_camp', {useMongoClient: true});
-
+//mongoose.connect('mongodb://localhost/yelp_camp', {useMongoClient: true});
+mongoose.connect('mongodb://gaurav:gaurav@ds121534.mlab.com:21534/yelpcamp', {useMongoClient: true});
+//mongodb://gaurav:gaurav@ds121534.mlab.com:21534/yelpcamp for deployment
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname+'/public'));	// dirname refers to the directory that the script was running 
