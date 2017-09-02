@@ -16,8 +16,9 @@ const commentRoutes=require('./routes/comments'),
 	  campgroundRoutes=require('./routes/campgrounds'),
 	  indexRoutes=require('./routes/index');
 
+//console.log(process.env.DATABASEURL); //to look at env vars
 //mongoose.connect('mongodb://localhost/yelp_camp', {useMongoClient: true});
-mongoose.connect('mongodb://gaurav:gaurav@ds121534.mlab.com:21534/yelpcamp', {useMongoClient: true});
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 //mongodb://gaurav:gaurav@ds121534.mlab.com:21534/yelpcamp for deployment
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
